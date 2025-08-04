@@ -27,7 +27,7 @@ fn main() -> anyhow::Result<()> {
     drop(tx);
     let consumer = thread::spawn(move || {
         for msg in rx {
-            println!("consumer: {:?}", msg);
+            println!("consumer: {msg:?}");
         }
         println!("consumer exit");
         42
