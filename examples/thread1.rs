@@ -36,7 +36,7 @@ fn main() -> anyhow::Result<()> {
     let secret = consumer
         .join()
         .map_err(|e| anyhow!("Thread join errorA:{:?}", e))?;
-    println!("secret: {}", secret);
+    println!("secret: {secret}");
     Ok(())
 }
 
@@ -48,7 +48,7 @@ fn producer(id: usize, tx: mpsc::Sender<Msg>) -> anyhow::Result<()> {
         let sleep_time = rand::random::<u8>() as u64 * 10;
         thread::sleep(Duration::from_millis(sleep_time));
         if rand::random::<u8>() % 5 == 0 {
-            println!("producer {} exit", id);
+            println!("producer {id} exit");
             break;
         }
     }
