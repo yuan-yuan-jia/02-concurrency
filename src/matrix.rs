@@ -174,7 +174,7 @@ mod tests {
         assert_eq!(c.col, 2);
         assert_eq!(c.row, 2);
         assert_eq!(c.data, vec![22, 28, 49, 64]);
-        assert_eq!(format!("{:?}", c), "Matrix(row=2, col=2, {22 28, 49 64})");
+        assert_eq!(format!("{c:?}"), "Matrix(row=2, col=2, {22 28, 49 64})");
 
         Ok(())
     }
@@ -185,7 +185,7 @@ mod tests {
         let b = Matrix::new([1, 2, 3, 4], 2, 2);
         let c = a * b;
         assert_eq!(c.data, vec![7, 10, 15, 22]);
-        assert_eq!(format!("{}", c), "{7 10, 15 22}");
+        assert_eq!(format!("{c}"), "{7 10, 15 22}");
         Ok(())
     }
 
